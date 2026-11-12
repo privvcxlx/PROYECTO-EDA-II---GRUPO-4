@@ -5,6 +5,7 @@ El sistema registra, busca, actualiza y cancela reservas de pasajeros, y maneja 
 Cada reserva se guarda a la vez en varias estructuras, y cada una responde de forma eficiente a un tipo de consulta distinto.
 
 | Estructura | Clave | Para qué se usa | Costo |
+| --- | --- | --- | --- |
 | Tabla hash con encadenamiento | idReserva | Buscar, actualizar y cancelar por ID. Detecta IDs repetidos. | O(1) promedio |
 | Árbol AVL | fecha + hora + idReserva | Listado cronológico y consulta por rango de fechas. | O(log n) |
 | Max-heap (uno por vuelo) | categoría del pasajero y orden de llegada | Lista de espera: sale primero el de mayor prioridad. | O(log n) |
